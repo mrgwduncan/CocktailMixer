@@ -1,6 +1,9 @@
 import request from "superagent";
-const cocktails = "https://www.thecocktaildb.com/api/json/v1/1/";
+const getEncodedToken = () => 'encoded-token'
 
+// Externall API calls 
+
+const cocktails = "https://www.thecocktaildb.com/api/json/v1/1/";
 export function getByIngredient(ingredient) {
   return request
     .get(cocktails + "filter.php?i=" + ingredient)
@@ -58,3 +61,8 @@ export function getCocktailByFirst(first) {
     .get(cocktails + "search.php?f=" + first)
     .then(response => response.body);
 }
+
+
+// Internal API calls - users
+
+// Internal API calls - favourites 

@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import { signIn, isAuthenticated } from "authenticare/client";
-import { updateControl } from "../actions";
-import { connect } from "react-redux";
+import { register, isAuthenticated } from "authenticare/client";
 
-function SignIn(props) {
+export default function Register(props) {
   const [form, setForm] = useState({
     username: "",
     password: ""
@@ -17,7 +15,7 @@ function SignIn(props) {
   };
 
   const handleClick = () => {
-    signIn(
+    register(
       {
         username: form.username,
         password: form.password
@@ -31,15 +29,12 @@ function SignIn(props) {
       }
     });
   };
-  const handleRegister = () => {
-    props.dispatch(updateControl(5));
-  };
 
   return (
     <div className="panel">
-      <h2>Sign in</h2>
+      <h2>Register</h2>
       <div className="search">
-        <form>
+        <form >
           <label>Username</label>
           <input
             type="text"
@@ -56,16 +51,10 @@ function SignIn(props) {
           ></input>
           <br />
           <button type="button" onClick={handleClick}>
-            Sign in
+            Register
           </button>
         </form>
-        <div className="search">
-          <p>no account ?</p>
-          <br />
-          <button onClick={handleRegister}>Register</button>
-        </div>
       </div>
     </div>
   );
 }
-export default connect()(SignIn);

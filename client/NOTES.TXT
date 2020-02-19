@@ -1,2 +1,73 @@
 Each different type of search needs to return results to the search gobal state for the 
 search results page to be uniform. 
+
+
+import React from "react";
+import { signIn, isAuthenticated } from "authenticare/client";
+import { updateControl } from "../actions"
+import { connect } from "react-redux";
+
+class SignIn extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      username: "",
+      password: ""
+    };
+  }
+
+  handleChange = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
+  handleRegister = e => {
+    this.props.dispatch(updateControl(5));
+  };
+  handleSelectSubmit = e => {
+    signIn(
+      {
+        username: this.state.username,
+        password: this.state.password
+      },
+      {
+        baseUrl: process.env.BASE_API_URL // see .env and webpack.config.js
+      }
+    ).then(token => {
+      if (isAuthenticated()) {
+        props.history.push("/");
+      }
+    });
+  };
+  render() {
+    return (
+      <div className="panel">
+        <h3>sign in</h3>
+        <div className="search">
+          <form onSubmit={this.handleSelectSubmit}>
+            <label>Username</label>
+            <input
+              type="text"
+              name="username"
+              onChange={this.handleChange}
+            ></input>
+            <br /> <label>password</label>
+            <input
+              type="password"
+              name="password"
+              onChange={this.handleChange}
+            ></input>
+            <br />
+            <input type="submit" value="login" />
+          </form>
+          <p>no account ?</p>
+          <br />
+          <button onClick={this.handleRegister}>Register</button>
+        </div>
+      </div>
+    );
+  }
+}
+export default connect()(SignIn);
+
