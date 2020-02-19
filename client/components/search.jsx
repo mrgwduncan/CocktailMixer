@@ -54,7 +54,7 @@ class Search extends React.Component {
   };
   render() {
     return (
-      <div className="searchpanel">
+      <div className="panel">
         <h2>Search for a cocktail</h2>
         <div className="search">
           <form onSubmit={this.handleSelectSubmit}>

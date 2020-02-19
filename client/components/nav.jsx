@@ -22,13 +22,14 @@ class Nav extends React.Component {
   render() {
     return (
       <div className="nav">
-        <button className="navbutton">Share</button>
         <button className="navbutton" onClick={this.handleClickRandom}>
           Randon Cocktail
         </button>
+        
         <button className="navbuttonsearch" onClick={this.handleClickSearch}>
           Search
         </button>
+        <button className="navbutton">Sign In</button>
       </div>
     );
   }

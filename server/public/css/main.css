@@ -126,11 +126,11 @@ p.drop:first-letter {
   flex-basis: 50%;
   font-size: 0.85em;
 }
-.searchpanel {
+.panel {
   min-height: 97%;
   top: 2em;
   position: fixed;
-  width: 31em;
+  width: 31.55em;
   right: 0;
   background-color: #b6035d;
 }
@@ -228,7 +228,7 @@ h2 {
   border-style: solid;
   border-color: white;
 }
-.displayimages img:hover{
+.displayimages img:hover {
   width: 7em;
   height: 7em;
   border-radius: 50%;

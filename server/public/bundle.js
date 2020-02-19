@@ -855,7 +855,7 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "searchpanel"
+        className: "panel"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Search for a cocktail"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
@@ -1142,14 +1142,14 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "nav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "navbutton"
-      }, "Share"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "navbutton",
         onClick: this.handleClickRandom
       }, "Randon Cocktail"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "navbuttonsearch",
         onClick: this.handleClickSearch
-      }, "Search"));
+      }, "Search"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "navbutton"
+      }, "Sign In"));
     }
   }]);
 
